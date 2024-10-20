@@ -1,7 +1,7 @@
-# syntax=docker/dockerfile:1
+# syntax=docker/dockerfile:1@sha256:865e5dd094beca432e8c0a1d5e1c465db5f998dca4e439981029b3b81fb39ed5
 ARG PYVER=3.11.9
 ARG ALPTAG=3.20@sha256:0a4eaa0eecf5f8c050e5bba433f58c052be7587ee8af3e8b3910ef9ab5fbe9f5
-FROM python:${PYVER}-alpine${ALPTAG} as builder
+FROM python:latest@sha256:a31cbb4db18c6f09e3300fa85b77f6d56702501fcb9bdb8792ec702a39ba6200:${PYVER}-alpine${ALPTAG} as builder
 
 # Add the community repo for access to patchelf binary package
 ARG ALPTAG
@@ -32,7 +32,7 @@ RUN python3 post4docker.py
 
 ### Copy frozen binary to the container that will actually be published
 ARG ALPTAG
-FROM alpine:${ALPTAG}
+FROM alpine:latest@sha256:beefdbd8a1da6d2915566fde36db9db0b524eb737fc57cd1367effd16dc0d06d:${ALPTAG}
 RUN apk --no-cache upgrade && apk --no-cache add openssl-dev expat
 # The path `curator_build` is from `builder` and `post4docker.py`
 COPY --from=builder curator_build /curator/
