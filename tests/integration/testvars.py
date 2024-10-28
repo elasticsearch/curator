@@ -10,7 +10,7 @@ client_config = ('---\n'
 '  loglevel: DEBUG\n'
 '  logfile:\n'
 '  logformat: default\n'
-'  blacklist: []\n')
+'  denylist: []\n')
 
 client_conf_logfile = ('---\n'
 'elasticsearch:\n'
@@ -33,7 +33,7 @@ client_config_envvars = ('---\n'
 '  loglevel: DEBUG\n'
 '  logfile:\n'
 '  logformat: default\n'
-'  blacklist: []\n')
+'  denylist: []\n')
 
 bad_client_config = ('---\n'
 'elasticsearch:\n'

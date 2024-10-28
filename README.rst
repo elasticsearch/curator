@@ -56,7 +56,7 @@ The updated configuration file structure requires ``elasticsearch`` at the root 
       loglevel: INFO
       logfile: /path/to/file.log
       logformat: default
-      blacklist: []
+      denylist: []
 
 Action File Configuration
 -------------------------

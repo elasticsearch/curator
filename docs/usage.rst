@@ -64,7 +64,7 @@ This is quite simple:
       'loglevel': 'INFO',
       'logfile': None,
       'logformat': 'default',
-      'blacklist': ['elastic_transport', 'urllib3']
+      'denylist': ['elastic_transport', 'urllib3']
     }
 
     set_logging(LOG)
@@ -91,7 +91,7 @@ Available settings for ``logformat`` are: ``default``, ``json``, and ``ecs``. Th
 uses `the Python ECS Log Formatter`_ and is great if you plan on ingesting your logs into
 Elasticsearch.
 
-Blacklisting logs by way of the ``blacklist`` setting should remain configured with the defaults
+Denylisting logs by way of the ``denylist`` setting should remain configured with the defaults
 (``['elastic_transport', 'urllib3']``), unless you are troubleshooting a connection issue. The
 ``elastic_transport`` and ``urllib3`` modules logging is exceptionally chatty for inclusion with
 Curator action tracing.

@@ -435,7 +435,7 @@ which is why I didn't start with 8.6.0 as my release version.
     Curator is going to use it. Welcome, ``ecs-logging``! As before, just use ``logformat: ecs``,
     but now it has all of the goodness right there!
   * rST docs are improved and updated. Check out https://curator.readthedocs.io to see.
-  * Logging turned out to be too verbose due to a shift. Now the ``blacklist`` defaults to
+  * Logging turned out to be too verbose due to a shift. Now the ``denylist`` defaults to
     ``['elastic_transport', 'urllib3']``. Documentation updated accordingly.
   * Default behavior is now to not verify snapshot repository access for Snapshot and Restore
     actions. It was a hacky fix for older versions of Elasticsearch that just shouldn't be needed.
@@ -1796,7 +1796,7 @@ improves documentation and includes new linux binary packages.
   * Community contributed doc fixes.
   * Reduced logging verbosity by making most messages debug level. #684
     (untergeek)
-  * Fixed log whitelist behavior (and switched to blacklisting instead).
+  * Fixed log allowlist behavior (and switched to denylisting instead).
     Default behavior will now filter traffic from the ``elasticsearch`` and
     ``urllib3`` modules.
   * Fix Travis CI testing to accept some skipped tests, as needed. #695
@@ -1818,7 +1818,7 @@ improves documentation and includes new linux binary packages.
   * Community contributed doc fixes.
   * Reduced logging verbosity by making most messages debug level. #684
     (untergeek)
-  * Fixed log whitelist behavior (and switched to blacklisting instead).
+  * Fixed log allowlist behavior (and switched to denylisting instead).
     Default behavior will now filter traffic from the ``elasticsearch`` and
     ``urllib3`` modules.
   * Fix Travis CI testing to accept some skipped tests, as needed. #695
@@ -2723,7 +2723,7 @@ testing exists, right?), and fixed a few of them.
 **Bug fix**
 
  * Updated ``README.md`` to briefly explain what curator does #117 (untergeek)
- * Fixed ``es_repo_mgr`` logging whitelist #119 (untergeek)
+ * Fixed ``es_repo_mgr`` logging allowlist #119 (untergeek)
  * Fixed absent ``months`` time-unit #120 (untergeek)
  * Filter out ``.marvel-kibana`` when prefix is ``.marvel-`` #120 (untergeek)
  * Clean up arg parsing code where redundancy exists #123 (untergeek)
