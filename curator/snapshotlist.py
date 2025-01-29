@@ -461,6 +461,7 @@ class SnapshotList:
             return
         self.loggit.debug('All filters: %s', config['filters'])
         for fltr in config['filters']:
+            f = f.copy()
             self.loggit.debug('Top of the loop: %s', self.snapshots)
             self.loggit.debug('Un-parsed filter args: %s', fltr)
             filter_result = SchemaCheck(
